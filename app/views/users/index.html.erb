@@ -1,0 +1,26 @@
+<h1>Users List</h1>
+<table>
+  <tr>
+    <th><%= link_to "First Name", sort: "first_name"%></th>
+    <th><%= link_to "Last Name", sort: "last_name"%></th>
+    <th><%= link_to "Email", sort: "email"%></th>
+    <th><%= link_to "Status", sort: "status"%></th>
+    <th>Actions </th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.status %></td>
+      <td><%= link_to user.username, user %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td> <%= paginate @users %> </td>
+  </tr>
+</table>
